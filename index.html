@@ -1,0 +1,676 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio M. Dion Prasetiyo | Content Creator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --instagram: #E1306C;
+            --tiktok: #000000;
+            --linkedin: #0077B5;
+            --gradient: linear-gradient(135deg, #4361ee 0%, #3f37c9 50%, #f72585 100%);
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(248, 219, 219, 0.8) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(214, 228, 255, 0.8) 0%, transparent 20%);
+        }
+
+        /* Header */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255,255,255,0.3);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(5deg);
+            border-color: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: -3rem auto 0;
+            padding: 0 2rem 4rem;
+            position: relative;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid rgba(67, 97, 238, 0.2);
+            font-size: 1.8rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            color: #555;
+        }
+
+        .skills {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .skills h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin: 0.3rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+
+        /* Social Media Section */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .social-card {
+            background: white;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .social-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+            transition: height 0.3s ease;
+            z-index: -1;
+        }
+
+        .social-card:hover::before {
+            height: 100%;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            color: white;
+        }
+
+        .social-card:hover h3,
+        .social-card:hover p {
+            color: white;
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover .social-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: white;
+        }
+
+        .social-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+
+        .social-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background: white;
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+
+        .social-card:hover .social-links {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        /* Instagram Card */
+        .social-card:nth-child(1)::before {
+            background: var(--instagram);
+        }
+
+        /* TikTok Card */
+        .social-card:nth-child(2)::before {
+            background: var(--tiktok);
+        }
+
+        /* LinkedIn Card */
+        .social-card:nth-child(3)::before {
+            background: var(--linkedin);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.8);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+            background: white;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .social-links-footer {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links-footer a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .social-links-footer a:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: var(--primary);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            color: rgba(255,255,255,0.7);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.3s; }
+        section:nth-child(3) { animation-delay: 0.5s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                gap: 0.8rem;
+            }
+            
+            nav ul li a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            button {
+                padding: 1rem 2rem;
+                width: 100%;
+            }
+        }
+
+        /* Particle Background (Optional) */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Optional: Animated Background -->
+    <canvas class="particles"></canvas>
+
+    <header>
+        <div class="header-content">
+            <img src="profile.jpg" alt="Foto M. Dion Prasetiyo" class="profile-img">
+            <h1>M. Dion Prasetiyo</h1>
+            <p>Content Creator & Digital Marketer</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about"><i class="fas fa-user"></i> Tentang Saya</a></li>
+            <li><a href="#social"><i class="fas fa-share-alt"></i> Sosial Media</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Kontak</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="about">
+            <h2><i class="fas fa-star"></i> Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Halo! Saya M. Dion Prasetiyo, seorang Content Creator dengan pengalaman 7 bulan di bidang Admin, Sales, & Graphic Design. Saya memiliki passion di bidang Sosial Media, Teknologi, dan Financial Market.</p>
+                    <p>Saya lulus dari SMAN 1 Balapulang jurusan IPA. Selama karir saya, saya telah membantu berbagai klien memperoleh penjualan pertama mereka sebagai Dropshipper melalui strategi konten yang efektif dan analisis pasar yang mendalam.</p>
+                    <p>Saya percaya bahwa konten yang kreatif dan data-driven adalah kunci kesuksesan di era digital ini.</p>
+                </div>
+                <div class="skills">
+                    <h3><i class="fas fa-code"></i> Keahlian</h3>
+                    <div>
+                        <span class="skill-tag"><i class="fas fa-laptop-code"></i> Basic Coding</span>
+                        <span class="skill-tag"><i class="fas fa-chart-line"></i> Market Analysis</span>
+                        <span class="skill-tag"><i class="fas fa-robot"></i> AI Prompting</span>
+                        <span class="skill-tag"><i class="fas fa-photo-video"></i> Content Creation</span>
+                        <span class="skill-tag"><i class="fas fa-shopping-bag"></i> Product Affiliating</span>
+                        <span class="skill-tag"><i class="fas fa-paint-brush"></i> Graphic Design</span>
+                        <span class="skill-tag"><i class="fas fa-project-diagram"></i> Dropshipping</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="social">
+            <h2><i class="fas fa-share-alt"></i> Sosial Media Saya</h2>
+            <div class="social-grid">
+                <!-- Instagram -->
+                <div class="social-card">
+                    <div class="social-icon" style="color: var(--instagram);">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>@dionprsty28</p>
+                    <a href="https://www.instagram.com/dionprsty28/" target="_blank" class="social-links">
+                        <i class="fas fa-external-link-alt"></i> Kunjungi Profil
+                    </a>
+                </div>
+                
+                <!-- TikTok -->
+                <div class="social-card">
+                    <div class="social-icon" style="color: var(--tiktok);">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3>TikTok</h3>
+                    <p>@dionprsty</p>
+                    <a href="https://www.tiktok.com/@dionprsty" target="_blank" class="social-links">
+                        <i class="fas fa-external-link-alt"></i> Kunjungi Profil
+                    </a>
+                </div>
+                
+                <!-- LinkedIn -->
+                <div class="social-card">
+                    <div class="social-icon" style="color: var(--linkedin);">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>M. Dion Prasetiyo</p>
+                    <a href="https://www.linkedin.com/in/m-dion-prasetiyo" target="_blank" class="social-links">
+                        <i class="fas fa-external-link-alt"></i> Connect
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2><i class="fas fa-envelope"></i> Hubungi Saya</h2>
+            <div class="contact-form">
+                <section class="contact-section">
+                    <h2>Kontak</h2>
+                    <form action="https://formspree.io/f/xanobkpe" method="POST">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email" name="email" required placeholder="email@contoh.com">
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Pesan</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tulis pesan Anda di sini..."></textarea>
+                        </div>
+                    
+                        <!-- Anti-spam honeypot -->
+                        <input type="text" name="_honey" style="display:none">
+                    
+                        <!-- Redirect setelah submit (optional) -->
+                        <input type="hidden" name="_next" value="https://example.com/terima-kasih.html">
+                    
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i> Kirim Pesan
+                        </button>
+                    </form>
+                    
+                  </section>                  
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="social-links-footer">
+            <a href="https://www.instagram.com/dionprsty28/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@dionprsty" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/m-dion-prasetiyo" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <p>Email: <a href="mailto:dionprasetyo771@gmail.com">dionprasetyo771@gmail.com</a></p>
+        <p>&copy; <span id="year"></span> M. Dion Prasetiyo. All rights reserved.</p>
+    </footer>
+
+    <!-- Optional: Particle.js for animated background -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // Auto-update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda.');
+            this.reset();
+        });
+
+        // Optional: Initialize particles.js
+        if (typeof particlesJS !== 'undefined') {
+            particlesJS.init({
+                selector: '.particles',
+                color: '#4361ee',
+                connectParticles: true,
+                maxParticles: 50
+            });
+        }
+    </script>
+</body>
+</html>
